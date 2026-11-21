@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pokédex Kanto</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23ff2020' stroke='%23111' stroke-width='3'/%3E%3Cpath d='M2 16h28a14 14 0 0 1-28 0z' fill='%23fff' stroke='%23111' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='4' fill='%23fff' stroke='%23111' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/pokedex.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/ui.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l3 6.5 7 .8-5.2 4.8 1.5 7L12 17.5 5.7 21l1.5-7L2 9.3l7-.8z"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2l2.2 6.8L21 11l-6.8 2.2L12 20l-2.2-6.8L3 11l6.8-2.2z"/></symbol>
+<symbol id="i-ball" viewBox="0 0 24 24"><path d="M2 12a10 10 0 0 1 20 0z" fill="#ff3b3b"/><path d="M2 12a10 10 0 0 0 20 0z" fill="#fff"/><g fill="none" stroke="#111" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h7M15 12h7"/><circle cx="12" cy="12" r="3" fill="#fff"/></g></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 21h8M5 7h14M5 7l-3 7h6zM19 7l-3 7h6z"/></g></symbol>
+<symbol id="i-son" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9zM16.5 9a4 4 0 0 1 0 6M19 6.5a8 8 0 0 1 0 11"/></g></symbol>
+<symbol id="i-soff" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9zM16 9l6 6M22 9l-6 6"/></g></symbol>
+</defs></svg>
+<div id="splash">
+<div class="sbg"></div>
+<div class="scontent">
+<img class="logo-img" src="assets/images/pokemon-logo.png" alt="Pokémon">
+<div class="sub">POKÉDEX · KANTO</div>
+<div class="ballwrap"><div class="ball"><i></i></div><div class="shadow"></div></div>
+<div class="lights"><b></b><b></b><b></b></div>
+<p>Inicializando Pokédex...</p>
+<div class="load"><span></span></div>
+</div>
+<small class="credit">Arte de fundo: Daniel Bogni</small>
+</div>
+<main class="device">
+<section class="panel left">
+<div class="crown"><div class="lens"></div><b class="r"></b><b class="y"></b><b class="g"></b><h1><img src="assets/images/pokedex-logo.png" alt="Pokédex"></h1></div>
+<div class="frame">
+<i class="eye"></i><i class="eye e2"></i>
+<div class="pv" id="pv">
+<small id="pvnum"></small>
+<img id="pvimg" alt="" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=">
+<h2 id="pvname">Carregando</h2>
+<div id="pvtypes"></div>
+<small id="pvform"></small>
+<div id="pvcmp"></div>
+</div>
+<div class="vents"><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="ctrl">
+<button class="knob" id="snd" data-act="sound" title="Som"></button>
+<div class="pills"><button class="pill red" data-act="shiny">SHINY</button><button class="pill blue" id="bfav" data-act="fav">FAV</button></div>
+<div class="dpad">
+<button data-act="step" data-d="-1" title="Anterior" style="grid-area:u">▲</button>
+<button data-act="step" data-d="-10" title="-10" style="grid-area:l">◀</button>
+<button data-act="step" data-d="10" title="+10" style="grid-area:r">▶</button>
+<button data-act="step" data-d="1" title="Próximo" style="grid-area:d">▼</button>
+<i style="grid-area:c"></i>
+</div>
+<button class="green" id="bcatch" data-act="caught">CAPTURAR</button>
+</div>
+</section>
+<div class="hinge"></div>
+<section class="panel right">
+<div class="lcd status"><span id="status">POKÉDEX KANTO</span></div>
+<div class="lcd main">
+<div id="tools">
+<input id="q" placeholder="Buscar nome ou número" autocomplete="off">
+<select id="type"><option value="">Todos os tipos</option></select>
+<button data-act="order" id="order">↑ 1→151</button>
+<input id="jump" type="number" min="1" max="151" placeholder="Nº">
+<button data-act="jump">Ir</button>
+</div>
+<div id="view"></div>
+</div>
+<div class="cells">
+<button data-act="mode" data-mode="catalog">Catálogo</button>
+<button data-act="mode" data-mode="favs">Favoritos</button>
+<button data-act="mode" data-mode="caught">Coleção</button>
+<button data-act="mode" data-mode="compare">Comparar</button>
+<button data-act="find">Buscar</button>
+<button data-act="tab" data-tab="info">Dados</button>
+<button data-act="tab" data-tab="evo">Evolução</button>
+<button data-act="tab" data-tab="fun">Curiosidades</button>
+<button data-act="view">Ficha</button>
+<button data-act="random">Surpresa</button>
+</div>
+<div class="row">
+<button class="wbtn" data-act="step" data-d="-1">◀ ANTERIOR</button>
+<button class="wbtn" data-act="step" data-d="1">PRÓXIMO ▶</button>
+<button class="gold" data-act="mode" data-mode="catalog" title="Início"></button>
+</div>
+<div class="row"><div class="lcd small">Pokédex Kanto — Criado por Georgederick</div><div class="lcd small">Dados: PokéAPI</div></div>
+</section>
+</main>
+<script src="js/storage.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

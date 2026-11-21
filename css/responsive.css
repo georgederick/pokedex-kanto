@@ -1,0 +1,2 @@
+@media(max-width:900px){.device{grid-template-columns:1fr}.hinge{height:22px;border-width:0 5px;background:linear-gradient(#6e0520,#f0406a 35%,#8f0626)}.left{border-radius:30px 30px 6px 6px}.right{border-radius:6px 6px 30px 30px}.main{max-height:none}.pv{min-height:300px}}
+@media(max-width:480px){body{padding:6px}.panel{padding:10px}.cells button{font-size:.6rem;padding:12px 0}.ctrl{gap:10px}}
